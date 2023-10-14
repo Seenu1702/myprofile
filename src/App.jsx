@@ -1,16 +1,15 @@
 const App = () =>{
-  //our first react component
-  // also javascript funtion
-  // for now it does not receive any components
-
-  // it can also contain or execute javascript code
-  console.log("Hello from Component App")
+  const now = new Date();
+  const a = 10;
+  const b = 20;
+  console.log(now, a+b);
 
   return(
-    
-    // returns a html
     <div>
-      <p>Hello Seenu</p>
+      <p>Hello Seenu! its { now.toString() }</p>
+      <p>
+        { a } plus { b } is { a + b }
+      </p>
     </div>
   )
 
