@@ -8,9 +8,13 @@ const Hello = (props) => {
 
 
 const App = () =>{
+  const appHeader = {
+    color:"white", 
+    background: "red"
+  }
   return(
     <div>
-      <h1 style = {{color:"white", background: "red"}} >Greetings</h1>
+      <h1 style = { appHeader } >Greetings</h1>
       <Hello name='Seenu' age='24'/>
       <Hello name='Vishwa' age='25'/>
     </div>
