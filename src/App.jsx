@@ -10,7 +10,7 @@ const Hello = (props) => {
 const App = () =>{
   return(
     <div>
-      <h1>Greetings</h1>
+      <h1 style = {{color:"white", background: "red"}} >Greetings</h1>
       <Hello name='Seenu' age='24'/>
       <Hello name='Vishwa' age='25'/>
     </div>
