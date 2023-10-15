@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+
 import Note from "./Components/Note";
 
 function App(props) {
@@ -9,10 +10,10 @@ function App(props) {
     itemList.push(<Note key={ note.id } note = {note} />);
   });
 
-  const addNote = (event) => {
-    event.preventdefault();
+  function addNote(event) {
+    event.preventDefault();
     // console.log('button clicked');
-    // console.log(event.target.elements.note.value);
+    // console.log(event.target.elements.note.value);   
     // console.log(event);
   }
 
@@ -25,8 +26,8 @@ function App(props) {
       </ul>
 
       <form onSubmit={addNote}>
-        <input type="text" name="note"/>
-        <button>Save Note</button>
+        <input name="note" />
+        <button type="submit">Save Note</button>
       </form>
     </div>
   )
