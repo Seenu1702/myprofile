@@ -11,7 +11,7 @@ function App(props) {
 
   const addNote = (event) => {
     event.preventdefault();
-    // console.log('button clicked');
+    console.log('button clicked');
     // console.log(event.target.elements.note.value);
     // console.log(event);
   }
@@ -24,9 +24,9 @@ function App(props) {
         { itemList }
       </ul>
 
-      <form onSubmit={addNote}>
+      <form>
         <input type="text" name="note"/>
-        <button>Save Note</button>
+        <button onClick={addNote}>Save Note</button>
       </form>
     </div>
   )
