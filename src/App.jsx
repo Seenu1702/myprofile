@@ -1,26 +1,24 @@
-const Hello = (props) => {
-  return(
+/* eslint-disable react/prop-types */
+
+function App(props) {
+  // console.log(props);
+
+  // destructing
+  const {notes} = props;
+  // console.log(notes);
+
+  return (
     <div>
-      <p>Hello { props.name }. Your age is { props.age }</p>
+      <h1>Notes</h1>
+      <ul>
+        <li>{notes[0].content}</li>
+        <li>{notes[1].content}</li>
+        <li>{notes[2].content}</li>
+        <li>{notes[3].content}</li>
+        <li>{notes[4].content}</li>
+      </ul>
     </div>
   )
 }
 
-
-const App = () =>{
-  const appHeader = {
-    color:"white", 
-    background: "red"
-  }
-  return(
-    <div>
-      <h1 style = { appHeader } >Greetings</h1>
-      <Hello name='Seenu' age='24'/>
-      <Hello name='Vishwa' age='25'/>
-    </div>
-  )
-
-}
-
-
-export default App;
+export default App
