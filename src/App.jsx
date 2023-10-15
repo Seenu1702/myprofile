@@ -10,6 +10,7 @@ function App(props) {
   return (
     <div>
       <h1>Notes</h1>
+      
       <ul>
         {
           notes.map((note) =>{
@@ -17,6 +18,14 @@ function App(props) {
           })
         }
       </ul>
+
+      <select name="" id="">
+        {
+          notes.map((note) =>{
+            return <option key={ note.id }> { note.content } </option>
+          })
+        }
+      </select>
     </div>
   )
 }
