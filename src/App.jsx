@@ -1,18 +1,11 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import React from 'react'
+import { Component } from "react";
 
-//passing props in functional component
-function Hello({ name }){
-  return(
-    <div>Hello { name }!</div>
-  )
-}
-
-function App() {
-  return (
-    <Hello name="Seenu"/>
-  )
+class App extends Component{
+  render() {
+    return(
+      <div>Hello Guest!</div>
+    )
+  }
 }
 
 export default App
