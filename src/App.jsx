@@ -1,36 +1,25 @@
-/* eslint-disable react/prop-types */
+// import React from 'react' // not necessary from React 17
+// Function componenent
 
-import Note from "./Components/Note";
 
-function App(props) {
-  const {notes} = props;
 
-  const itemList = [];
-  notes.forEach((note) => {
-    itemList.push(<Note key={ note.id } note = {note} />);
-  });
+// function App() {
+//   return (
+//     <div>Hello World!</div>
+//   )
+// }
 
-  function addNote(event) {
-    event.preventDefault();
-    console.log('button clicked');
-    // console.log(event.target.elements.note.value);   
-    // console.log(event);
+// export default App
+
+// class componenent
+import { Component } from "react";
+
+class App extends Component {
+  render() {
+    return(
+      <div>Hello World!</div>
+    )
   }
-
-  return (
-    <div>
-      <h1>Notes</h1>
-
-      <ul>
-        { itemList }
-      </ul>
-
-      <form>
-        <input name="note" />
-        <button onClick={addNote}>Save Note</button>
-      </form>
-    </div>
-  )
 }
 
-export default App
+export default App;
