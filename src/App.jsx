@@ -11,25 +11,35 @@ class App extends Component {
     }
   }
 
-  increment = () => {
+  handleIncrementClick = () => {
     // update the state(data) of the count
-    this.setState({
-      count: this.state.count + 1
-    })
+    this.setState((prevState) => ({
+      count: prevState.count + 1
+    }))
   }
 
-  decrement = () => {
-    this.setState({
-      count: this.state.count - 1
-    })
+  handleDecrementClick = () => {
+    if(this.state.count > 0)
+    {
+      this.setState((prevState) => ({
+        count: prevState.count - 1
+      }))
+    }
+  }
+
+  handleResetClick = () => {
+    this.setState((prevState) => ({
+      count: 0
+    }))
   }
 
   render(){
     return(
       <div>
         <p>Count: { this.state.count }</p> 
-        <p><button onClick={ this.increment }>Increment</button></p>
-        <p><button onClick={ this.decrement }>Decrement</button></p>
+        <button onClick={ this.handleIncrementClick }>Increment</button>
+        <button onClick={ this.handleDecrementClick }>Decrement</button>
+        <button onClick={ this.handleResetClick }>Reset</button>
         
       </div>
     )
