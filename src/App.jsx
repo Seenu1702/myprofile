@@ -1,54 +1,52 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-/* eslint-disable react/no-direct-mutation-state */
 import { Component } from "react";
 
 class App extends Component{
-
   constructor(props){
     super(props);
-    
+
     this.state = {
-      goodCount : 0,
-      neutralCount : 0,
-      badCount : 0
+      good : 0,
+      bad : 0,
+      neutral : 0
     }
   }
 
-   handleGood = () =>{
+  handleGood = () => {
     this.setState({
-      count: this.state.goodCount
-      ,
-    }) 
+      ...this.state,
+      good: this.state.good +1
+    })
   }
 
-   handleNeutral = () =>{
-
+  handleBad = () => {
+    this.setState((prevState) => ({
+      bad: prevState.bad + 1,
+    }))
   }
 
-   handleBad = () =>{
-
+  handleNeutral = () => {
+    this.setState((prevState) => ({
+      neutral: prevState.neutral + 1,
+    }))
   }
 
-  render() {
+  render(){
     return(
-      
-      <><div>
+      <>
+      <div>
         <h1>Give Feedback</h1>
-        <button onClick={this.handleGood}>Good</button>
-        <button onClick={this.handleNeutral}>Neutral</button>
-        <button onClick={this.handleBad}>Bad</button>
+        <button onClick={this.handleGood} type="button">Good</button>
+        <button onClick={this.handleBad} type="button">Bad</button>
+        <button onClick={this.handleNeutral} type="button">Neutral</button>
       </div>
       <div>
-        <p>Statistics:</p> 
-        <p>Good: {this.state.goodCount} </p>
-        <p>Neutral: </p>
-        <p>Bad: </p>
+          <h1>Statistics</h1>
+          <p>Good: {this.state.good}</p>
+          <p>Bad: {this.state.bad }</p>
+          <p>Neutral: {this.state.neutral }</p>
       </div>
-      </>
         
-
-      
+      </>
     )
   }
 }
