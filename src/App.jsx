@@ -8,13 +8,21 @@ Hooks:
     to create a counter, where the value is increased as function of time or at a click of button.
 */
 
+import { useState } from "react"
+
 
 
 function App(props) {
 
-  // console.log(props);
-  let {counter} = props;
-  console.log(counter);
+  const [counter, setCounter] = useState(0);
+
+  console.log('rendering...',counter)
+
+  setTimeout(
+    () => (
+      setCounter(counter + 1)
+    ),1000);
+
   return (
     <div>{counter}</div>
   )
