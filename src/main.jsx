@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx';
@@ -29,7 +30,27 @@ const notes = [
         content: "Prop vs State",
         important: false
     }
-]
+];
+
+//create a variable called counter and initialize value to 1.
+
+let counter = 1;
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+
+// ReactDOM.createRoot(document.getElementById('root')).render(<App counter = {counter}/>)
+
+let refresh = () =>{
+    ReactDOM.createRoot(document.getElementById('root')).render(<App counter = {counter}/>)
+};
+
+// refresh();
+// counter+=1;
+// refresh()
+// counter+=1;
+// refresh()
+
+// setInterval(()=>{
+//     refresh();
+//     counter += 1;
+// },1000)

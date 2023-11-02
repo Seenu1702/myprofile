@@ -1,54 +1,23 @@
-import { Component } from "react";
+/* eslint-disable react/prop-types */
+/*
+Hooks: 
+    - any function that starts with "use" is called as hook.
+    - they are special functions that are only available while React is rendering
+  
 
-class App extends Component{
-  constructor(props){
-    super(props);
+    to create a counter, where the value is increased as function of time or at a click of button.
+*/
 
-    this.state = {
-      good : 0,
-      bad : 0,
-      neutral : 0
-    }
-  }
 
-  handleGood = () => {
-    this.setState({
-      ...this.state,
-      good: this.state.good +1
-    })
-  }
 
-  handleBad = () => {
-    this.setState((prevState) => ({
-      bad: prevState.bad + 1,
-    }))
-  }
+function App(props) {
 
-  handleNeutral = () => {
-    this.setState((prevState) => ({
-      neutral: prevState.neutral + 1,
-    }))
-  }
-
-  render(){
-    return(
-      <>
-      <div>
-        <h1>Give Feedback</h1>
-        <button onClick={this.handleGood} type="button">Good</button>
-        <button onClick={this.handleBad} type="button">Bad</button>
-        <button onClick={this.handleNeutral} type="button">Neutral</button>
-      </div>
-      <div>
-          <h1>Statistics</h1>
-          <p>Good: {this.state.good}</p>
-          <p>Bad: {this.state.bad }</p>
-          <p>Neutral: {this.state.neutral }</p>
-      </div>
-        
-      </>
-    )
-  }
+  // console.log(props);
+  let {counter} = props;
+  console.log(counter);
+  return (
+    <div>{counter}</div>
+  )
 }
 
-export default App;
+export default App
