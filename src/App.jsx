@@ -12,19 +12,20 @@ import { useState } from "react"
 
 
 
-function App(props) {
+function App() {
 
   const [counter, setCounter] = useState(0);
 
-  console.log('rendering...',counter)
-
-  setTimeout(
-    () => (
-      setCounter(counter + 1)
-    ),1000);
+  const incrementHandler = () =>{
+    setCounter(counter+1);
+  }
+  
 
   return (
-    <div>{counter}</div>
+    <div>
+      <div>Counter: {counter}</div>
+      <button onClick={incrementHandler}>Increment</button>
+    </div>
   )
 }
 
