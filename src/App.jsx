@@ -10,7 +10,11 @@ Hooks:
 
 import { useState } from "react"
 
-
+function Display({counter}) {
+  return(
+    <div>Counter: {counter}</div>
+  )
+}
 
 function App() {
 
@@ -33,7 +37,7 @@ function App() {
 
   return (
     <div>
-      <div>Counter: {counter}</div>
+      <Display counter = { counter }/>
       <button onClick={incrementHandler}>Increment</button>
       <button onClick={zeroHandler}>Zero</button>
       <button onClick={decrementHandler}>Decrement</button>
