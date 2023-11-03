@@ -18,13 +18,25 @@ function App() {
 
   const incrementHandler = () =>{
     setCounter(counter+1);
-  }
+  };
+
+  const zeroHandler = () =>{
+    setCounter(0);
+  };
+
+  const decrementHandler = () =>{
+    if(counter > 0){
+      setCounter(counter - 1)
+    }
+  };
   
 
   return (
     <div>
       <div>Counter: {counter}</div>
       <button onClick={incrementHandler}>Increment</button>
+      <button onClick={zeroHandler}>Zero</button>
+      <button onClick={decrementHandler}>Decrement</button>
     </div>
   )
 }
