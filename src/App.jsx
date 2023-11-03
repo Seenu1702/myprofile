@@ -9,19 +9,9 @@ Hooks:
     to create a counter, where the value is increased as function of time or at a click of button.
 */
 
-import { useState } from "react"
-
-function Display({counter}) {
-  return(
-    <div>Counter: {counter}</div>
-  )
-}
-
-function Button({text,handleClick}){
-  return(
-    <button onClick={handleClick}>{text}</button>
-  )
-}
+import { useState } from "react";
+import Button from './Components/Button';
+import Display from './Components/Display';
 
 function App() {
 
@@ -52,4 +42,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
