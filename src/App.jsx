@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
 /*
 Hooks: 
@@ -13,6 +14,12 @@ import { useState } from "react"
 function Display({counter}) {
   return(
     <div>Counter: {counter}</div>
+  )
+}
+
+function Button({text,handleClick}){
+  return(
+    <button onClick={handleClick}>{text}</button>
   )
 }
 
@@ -38,9 +45,9 @@ function App() {
   return (
     <div>
       <Display counter = { counter }/>
-      <button onClick={incrementHandler}>Increment</button>
-      <button onClick={zeroHandler}>Zero</button>
-      <button onClick={decrementHandler}>Decrement</button>
+      <Button text = "Increment" handleClick = {incrementHandler}/>
+      <Button text = "Decrement" handleClick = {decrementHandler}/>
+      <Button text = "Zero" handleClick = {zeroHandler}/>
     </div>
   )
 }
