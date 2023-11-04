@@ -1,31 +1,31 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable no-undef */
 // import React from 'react'
 
-function GrandChildComponent({parentData}) {
-  console.log(`from grand child component: ${parentData}`);
-  return(
-    <div>
-      <h3>Grand Children Component</h3>
-    </div>
-  )
-}
+import { useState } from "react";
 
-function ChildComponent({parentData}) {
-  console.log(`from child component: ${parentData}`);
+function ChildComponent({onMessage}){
+  const message = `Hello from child component`;
+
   return(
     <div>
       <h2>Child Component</h2>
-      <GrandChildComponent parentData = {parentData}/>
+      <button onClick={() => onMessage(message)}>Send Message to the Parent</button>
     </div>
   )
 }
 
 function App() {
-  const parentData = "Hello from parent";
+  const [message, setMessage] = useState(``);
+
+  const handleMessage = (data) => {
+    setMessage(data);
+  }
+
   return (
     <div>
       <h1>Parent Component</h1>
-      <ChildComponent parentData = {parentData}/>
+      <p>Message from child component: { message }</p>
+      <ChildComponent onMessage = {handleMessage}/>
     </div>
   )
 }
