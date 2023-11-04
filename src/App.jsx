@@ -1,45 +1,40 @@
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable react/prop-types */
-/*
-Hooks: 
-    - any function that starts with "use" is called as hook.
-    - they are special functions that are only available while React is rendering
-  
-
-    to create a counter, where the value is increased as function of time or at a click of button.
-*/
-
-import { useState } from "react";
-import Button from './Components/Button';
-import Display from './Components/Display';
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react'
 
 function App() {
+  // create a state to store the data fetched from the API
 
-  const [counter, setCounter] = useState(0);
+  const [data, setData] = useState(null);
 
-  const incrementHandler = () =>{
-    setCounter(counter+1);
-  };
+  //use the useEffect hook to run the function to call the API only one time
 
-  const zeroHandler = () =>{
-    setCounter(0);
-  };
+  useEffect(()=>{
+    fetch(`https://jsonplaceholder.typicode.com/posts`)
+      .then(response => response.json())
+      .then(result => setData(result))
 
-  const decrementHandler = () =>{
-    if(counter > 0){
-      setCounter(counter - 1)
-    }
-  };
-  
+  },[]);
+
+  // console.log(data);
 
   return (
     <div>
-      <Display counter = { counter }/>
-      <Button text = "Increment" handleClick = {incrementHandler}/>
-      <Button text = "Decrement" handleClick = {decrementHandler}/>
-      <Button text = "Zero" handleClick = {zeroHandler}/>
+      <h1>API Data: </h1>
+      {
+        data ? (
+          <ul>
+            {
+               data.map(item => {
+                return <li key={item.id}>{item.title}</li>
+               })
+            }
+          </ul>
+        ) : (
+          <p>Loading....</p>
+        )
+      }
     </div>
   )
 }
 
-export default App;
+export default App
