@@ -1,23 +1,31 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react'
+/* eslint-disable react/prop-types */
+// import React from 'react'
+
+function GrandChildComponent({parentData}) {
+  console.log(`from grand child component: ${parentData}`);
+  return(
+    <div>
+      <h3>Grand Children Component</h3>
+    </div>
+  )
+}
+
+function ChildComponent({parentData}) {
+  console.log(`from child component: ${parentData}`);
+  return(
+    <div>
+      <h2>Child Component</h2>
+      <GrandChildComponent parentData = {parentData}/>
+    </div>
+  )
+}
 
 function App() {
-  const [count,setCount] = useState(0);
-
-  useEffect(() => {
-    document.title =` Count: ${count}`
-
-  },[count]);
-
-    const handleClick = () => {
-      setCount(count + 1);
-    }
-
-    // console.log(count);
-
+  const parentData = "Hello from parent";
   return (
     <div>
-      <button onClick={handleClick}>Increment Change</button>
+      <h1>Parent Component</h1>
+      <ChildComponent parentData = {parentData}/>
     </div>
   )
 }
