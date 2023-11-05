@@ -1,32 +1,44 @@
-/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 // import React from 'react'
-
-import { useState } from "react";
-
-function ChildComponent({onMessage}){
-  const message = `Hello from child component`;
-
-  return(
-    <div>
-      <h2>Child Component</h2>
-      <button onClick={() => onMessage(message)}>Send Message to the Parent</button>
-    </div>
-  )
-}
+import { useState } from 'react';
+import Home from './Components/Home';
+import Users from './Components/Users';
+import Notes from './Components/Notes';
 
 function App() {
-  const [message, setMessage] = useState(``);
+  const [page, setPage] = useState('home');
 
-  const handleMessage = (data) => {
-    setMessage(data);
+  const toPage = (page) => (event) =>{
+    event.preventDefault();
+    setPage(page);
+  }
+
+  const content = () =>{
+    if(page === 'home'){
+      return <Home />
+    }
+    else if(page === 'users'){
+      return <Users />
+    }
+    else if(page === 'notes'){
+      return <Notes />
+    }
+  }
+
+  const padding = {
+    padding: 10
   }
 
   return (
     <div>
-      <h1>Parent Component</h1>
-      <p>Message from child component: { message }</p>
-      <ChildComponent onMessage = {handleMessage}/>
+      <a href="" onClick={toPage('home')} style={padding}>Home</a>
+      <a href="" onClick={toPage('users')}style={padding}>Users</a>
+      <a href="" onClick={toPage('notes')}style={padding}>Notes</a>
+
+      {content()}
     </div>
+
+    
   )
 }
 
