@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 import GrandChildComponent from './GrandChildComponent';
+import { MessageContext } from '../App';
 
-function ChildComponent(props) {
-    const message = 'Hello, GrandChild...'
+function ChildComponent() {
+    const message = useContext(MessageContext);
+    
   return (
     <div>
         <h2>ChildComponent</h2>
-        <p>Message from Parent Component: <b>{props.message}</b></p>
-        <GrandChildComponent message={message}/>
+        <p>Message from Parent Component: <b>{message}</b></p>
+        <GrandChildComponent />
     </div>
   )
 }

@@ -1,7 +1,12 @@
 /* eslint-disable react/prop-types */
 // import React from 'react';
 
-function GrandChildComponent({message}) {
+import { useContext } from "react";
+import { MessageContext } from "../App";
+
+function GrandChildComponent() {
+
+    const message = useContext(MessageContext)
   return (
     <div>
         <h2>GrandChildComponent</h2>
