@@ -1,23 +1,27 @@
-// import React from 'react';
-import { createContext, useState } from 'react';
-import ChildComponent from './Components/ChildComponent';
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react'
+import Notes from './Components/Notes';
 
-// create a context
-const MessageContext = createContext();
+function App(props) {
+  // console.log(props.notes);
 
-function App() {
-  const [message, setMessage] = useState('Hello from Parent APP...');
+  const [notes, setNotes] = useState(props.notes);
 
+  console.log(notes);
   return (
     <div>
-      <h1>Parent Component</h1>
-      <MessageContext.Provider value = {message}>
-      <ChildComponent />
-      </MessageContext.Provider>
-
+      <h1>Notes App</h1>
+      <ul>
+        {
+          notes.map(note =>
+            <Notes key={note.id} note = {note}/>
+            )
+        }
+      </ul>
+     
       
     </div>
   )
 }
 
-export {App as default, MessageContext}
+export default App
