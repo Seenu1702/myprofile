@@ -7,3 +7,284 @@
 * [32mday7[m
   dayt[m
   master[m
+[33mcommit 6d120c18f3a5a8bb0fd766bdb9f940cac5a4ea50[m[33m ([m[1;36mHEAD -> [m[1;32mday7[m[33m)[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Nov 6 22:44:38 2023 +0530
+
+    form handling
+
+[33mcommit e6f8458fe2bacf94d9eae29c6e847454b6800c25[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Nov 6 21:59:50 2023 +0530
+
+    session task
+
+[33mcommit 407716b0a06e8a486637252989668a99c8961aae[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Nov 6 19:49:28 2023 +0530
+
+    session task on context api
+
+[33mcommit cab2a01dd4434518868bb4532ee78007f9289417[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Nov 6 16:24:08 2023 +0530
+
+    context api
+
+[33mcommit 2498331d9b40a6cb7e61430e92558fcf381d813b[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Nov 6 12:05:02 2023 +0530
+
+    different example for props drilling
+
+[33mcommit a5d116e8217e7e152e62b7367c72e0dcc20284b4[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Nov 6 11:58:46 2023 +0530
+
+    props drilling - parent to child to grandchild
+
+[33mcommit 9b60dba34c627cbff78f1737b11fe91e8995d74f[m[33m ([m[1;31morigin/day6[m[33m, [m[1;32mday6[m[33m)[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Nov 5 14:28:21 2023 +0530
+
+    traditional non - optional method to handle routes
+
+[33mcommit c92ca0798386cb04907ccf87197e05878b2dd25d[m[33m ([m[1;31morigin/day5[m[33m, [m[1;32mdayt[m[33m, [m[1;32mday5[m[33m, [m[1;32mday[m[33m)[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sat Nov 4 21:20:00 2023 +0530
+
+    passing data from child component to parent component
+
+[33mcommit c414af75e249c267a38c6ff01cdbc960b4ed6d6f[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sat Nov 4 20:41:31 2023 +0530
+
+    props drilling
+
+[33mcommit 90dd8428421283dd795ade8043881c9b38b31358[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sat Nov 4 20:25:36 2023 +0530
+
+    useEffect hook with dependency
+
+[33mcommit d537b461249dc91766a748338b23ce3e06d5a662[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sat Nov 4 20:04:58 2023 +0530
+
+    useEffect hook with no dependencies
+
+[33mcommit 23c99472214a7a847e309b4155ba986cacc243bf[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Fri Nov 3 18:27:23 2023 +0530
+
+    moving the  comonents to its own file - Display and Button
+
+[33mcommit ca6fa929d241ee24e313615fcea168c3c84ea480[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Fri Nov 3 18:11:37 2023 +0530
+
+    creating button component - reusability
+
+[33mcommit 629dde4e39ab86b49b31ad6cd3ba7e559f700d8d[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Fri Nov 3 18:04:19 2023 +0530
+
+    moving counter display in a separate componenent
+
+[33mcommit 9c1ddb69db351a66e7c8afa01ae7ec034070a0f9[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Fri Nov 3 16:31:28 2023 +0530
+
+    adding multiple examples for state counter with event handling
+
+[33mcommit eaa0efebf955c15c75ec625840bee6f416f960c8[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Thu Nov 2 16:07:44 2023 +0530
+
+    adding a state counter with event handling
+
+[33mcommit 14008e5598b7fe0a0963081997a6efa9238a7588[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Thu Nov 2 16:01:13 2023 +0530
+
+    adding a simple state counter using useState hook
+
+[33mcommit ea435fb691b69fe9d452dda605211b4775c1dc64[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Thu Nov 2 15:36:57 2023 +0530
+
+    page re-rendering
+
+[33mcommit 01c4c94f4dc03fd6bb9977c2417a6e01fc4465d0[m[33m ([m[1;31morigin/day4[m[33m, [m[1;32mday4[m[33m)[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Wed Nov 1 15:48:32 2023 +0530
+
+    exercise stateful class component
+
+[33mcommit 71e340eeeacec36fa89eb3972958057834b5aae1[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Tue Oct 31 12:03:48 2023 +0530
+
+    draft
+
+[33mcommit 9aa7852d4b1b351b20bfda6ce6cbe427f7c45216[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Tue Oct 24 16:44:18 2023 +0530
+
+    added bootstrap with npm
+
+[33mcommit 3eb91302dc6e947be6b4f80b56878fcc05258e86[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Oct 16 22:47:15 2023 +0530
+
+    stateful class component with prevState handler
+
+[33mcommit eb3fa8b64658c7b7e3d2d00c0a4ff1f69ca007d2[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Oct 16 22:32:16 2023 +0530
+
+    stateful class component
+
+[33mcommit 3d1c4d0de4e84c826de3ca3cacc4584b332ec3a2[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Oct 16 21:56:51 2023 +0530
+
+    class component life cycle
+
+[33mcommit f1430baebc669a1c366ac42abff4eb17d1a9a795[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Oct 16 12:32:27 2023 +0530
+
+    passing the props in class component
+
+[33mcommit ab60cc2a219f4b03c5dd03d155aa93fb5b52173b[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Oct 16 12:26:56 2023 +0530
+
+    created multiple class components
+
+[33mcommit dd4171e78ed86f3b72917dde1a59901714e8d4c9[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Oct 16 12:24:25 2023 +0530
+
+    created a class component
+
+[33mcommit 43de777a238e8eca92db79effc758eb1bfa6b476[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Oct 16 12:20:39 2023 +0530
+
+    passing props in functional component
+
+[33mcommit 6b8b5a2d5a423b067bd0cf1d623f27152ee5085c[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Mon Oct 16 12:03:34 2023 +0530
+
+    create componenent with function and class
+
+[33mcommit a7e5630c5c52bc9c9782a07da55a4d0125644f7e[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Oct 15 19:42:59 2023 +0530
+
+    event handling with onClick
+
+[33mcommit 0a5c5f523159b3b73499361016ea7cf00a9be7b4[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Oct 15 19:39:52 2023 +0530
+
+    event handling with onSubmit
+
+[33mcommit 620808aa1516d5956e1570ada95e329d1499ffb0[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Oct 15 14:42:32 2023 +0530
+
+    event handling with onsubmit
+
+[33mcommit 67a60f3cd661301a9e72274c273a29fa72f6bdb4[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Oct 15 13:02:25 2023 +0530
+
+    conditional rendering using ternary operator
+
+[33mcommit 5a19e0f47e78e22e959cfcd5d393507ed1f150e9[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Oct 15 12:58:58 2023 +0530
+
+    conditional rendering uusing if
+
+[33mcommit 6589cfc65eb4accdf43c27b11cf5e37c84eebd41[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Oct 15 12:29:41 2023 +0530
+
+    handling arraylist with foreach loop
+
+[33mcommit 356f7f8a516ba112c0e4ced01ad1fbfdc72cbf28[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Oct 15 12:21:46 2023 +0530
+
+    Moving Note to its own component file
+
+[33mcommit d2a202539b2c4347af7f511b8e404e9cfe3f9cb1[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Oct 15 12:18:23 2023 +0530
+
+    moving list item in Note component
+
+[33mcommit c22b0f840b06e373737b6c7fd6f7b1747b9556e3[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Oct 15 11:51:55 2023 +0530
+
+    array list as dropdown
+
+[33mcommit e86058b5f8ca22894272c3b8dc47c0929da071ce[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Oct 15 11:47:37 2023 +0530
+
+    array list with map method
+
+[33mcommit fd6d4d8d3f1174983f0caff901238ca71c5abd88[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sun Oct 15 11:42:04 2023 +0530
+
+    working with array lists - hardcoded the list item
+
+[33mcommit dd90040d2cf40ece83e15678f92acc7e63b4e68d[m[33m ([m[1;31morigin/day2-intro-to-react[m[33m, [m[1;32mday2-intro-to-react[m[33m)[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sat Oct 14 17:48:04 2023 +0530
+
+    inline styling stored in variable
+
+[33mcommit 7c11bbc2af4f6f251ae598ea61774648d6284a05[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sat Oct 14 17:46:13 2023 +0530
+
+    inline styling
+
+[33mcommit 9831282564ef0ba290cedc7cba063afc84117317[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sat Oct 14 17:13:45 2023 +0530
+
+    passing data through props
+
+[33mcommit c63f7337e69697c2a31bdd8b8b23aa4fc4099d16[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sat Oct 14 17:07:07 2023 +0530
+
+    Multiple component
+
+[33mcommit c7717d2c7d28220fda782acdf125ebe13e6b66a8[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sat Oct 14 17:02:44 2023 +0530
+
+    dynamic content
+
+[33mcommit c1f435cfad3f95a135a35a4d8867594c8b6a6eb7[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sat Oct 14 16:52:10 2023 +0530
+
+    default code simplification
+
+[33mcommit 7c6e50e6d72569893043796d4fe89e73dc5659ad[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Seenu1702 <seenusubramaniyan17@gmail.com>
+Date:   Sat Oct 14 16:25:38 2023 +0530
+
+    initial vite app setup done
