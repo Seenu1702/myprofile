@@ -8,7 +8,7 @@ import { useRef } from 'react';
 
 function App() {
 
-  const inputRef = useRef();
+  const inputRef = useRef(null);
 
   const handleButtonClick = () => {
     // console.log('button clicked');
