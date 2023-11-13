@@ -1,8 +1,7 @@
 import React from 'react';
 import { useRef } from 'react';
-// useRef - hook: used to create a mutable reference to an element or  a value that persists across render cycles.
+import SetInputFocus from './Components/SetInputFocus';
 
-// Example: Focus the input text element on click of a button
 
 
 
@@ -23,6 +22,7 @@ function App() {
         type="text"
         ref={inputRef} />
       <button onClick={handleButtonClick}>Focus Input</button>
+      <SetInputFocus reference = {inputRef}/>
     </div>
   )
 }
