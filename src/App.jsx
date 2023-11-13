@@ -9,6 +9,10 @@ function reducer(state,action){
   switch (action.type){
     case 'toggle':
       return {isActive: !state.isActive};
+    case 'toActive':
+      return {isActive: true};
+    case 'toInActive':
+      return {isActive: false};
   }
 }
 
@@ -20,6 +24,8 @@ function App() {
       <h1>User Profile</h1>
       <p>Account Active: {state.isActive ? 'Yes' : 'No'}</p>
       <button onClick={() => dispatch({type: 'toggle'})}>Toggle Profile</button>
+      <button onClick={() => dispatch({type: 'toActive'})}>Active</button>
+      <button onClick={() => dispatch({type: 'toInActive'})}>In Active</button>
     </div>
   )
 }
