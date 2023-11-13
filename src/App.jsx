@@ -1,28 +1,15 @@
 import React from 'react';
-import { useRef } from 'react';
-import SetInputFocus from './Components/SetInputFocus';
-
-
-
+import { useState } from 'react';
 
 function App() {
 
-  const inputRef = useRef(null);
-
-  const handleButtonClick = () => {
-    // console.log('button clicked');
-      // console.log(inputRef.current.value);
-      inputRef.current.focus();
-
-  }
-
+  const [count, setCount] = useState(0);
   return (
     <div>
-      <input 
-        type="text"
-        ref={inputRef} />
-      <button onClick={handleButtonClick}>Focus Input</button>
-      <SetInputFocus reference = {inputRef}/>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count+1)}>Increment</button>
+      <button onClick={() => setCount(count-1)}>Decrement</button>
+      <button onClick={() => setCount(0)}>Reset</button>
     </div>
   )
 }
