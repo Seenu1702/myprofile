@@ -8,9 +8,12 @@ function App(props) {
   // console.log(props.notes);
 
   // define states
-  
   const [notes, setNotes] = useState(props.notes);
   const [showStatus, setShowStatus] = useState('all');
+
+  // states for adding new notes form
+  const [newNoteContent, setNewNoteContent] = useState('');
+  const [newNoteImportant, setNewNoteImportant] = useState('');
 
   // const [notes, setNotes] = useState([]);
   // get the data
@@ -19,10 +22,7 @@ function App(props) {
   // }, []);
 
  const handleStatusChange = (event) => {
-  
   setShowStatus(event.target.value);
-  
-
  }
 
  let filteredNotes = (notes, showStatus) => {
@@ -38,6 +38,21 @@ function App(props) {
  }
 
  const notesFiltered = filteredNotes(notes, showStatus);
+ const addNewNote = (e) => {
+  e.preventDefault();
+    
+  // create a new noteobject
+  const noteObject = {
+    id: notes.length + 1,
+    content: newNoteContent,
+    important: newNoteImportant === 'true',
+  }
+
+  setNotes(notes.concat(noteObject));
+  setNewNoteContent('');
+  setNewNoteImportant('');
+
+ }
 
   return (
     <div>
@@ -80,6 +95,31 @@ function App(props) {
           })
         }
       </ul>
+      <hr />
+      <h1>Add a New Note : </h1>
+      <form onSubmit={addNewNote}>
+        <label htmlFor="">
+          Content: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text"
+          placeholder='Add a new note...' 
+          onChange={(e) => setNewNoteContent(e.target.value)}
+          value={newNoteContent}/>
+        </label>
+        <br /><br />
+        <label htmlFor="">
+          Is it Important? &nbsp;
+          <select 
+            onChange={(e) => setNewNoteImportant(e.target.value)}
+            value={newNoteImportant}
+          >
+            <option>--Select--</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
+        </label>
+        <br /><br />
+        <button type='submit'>Add New Note</button>
+      </form>
     </div>
   )
 }
