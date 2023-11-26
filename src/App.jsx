@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 function App(props) {
 
@@ -20,6 +20,12 @@ function App(props) {
   // useEffect(() =>{
   //   setNotes(props.notes);
   // }, []);
+
+  const newNote = useRef(null);
+
+  useEffect(() =>{
+    newNote.current.focus();
+  },[]);
 
  const handleStatusChange = (event) => {
   setShowStatus(event.target.value);
@@ -103,7 +109,9 @@ function App(props) {
           <input type="text"
           placeholder='Add a new note...' 
           onChange={(e) => setNewNoteContent(e.target.value)}
-          value={newNoteContent}/>
+          value={newNoteContent}
+          ref={newNote}
+          required/>
         </label>
         <br /><br />
         <label htmlFor="">
@@ -111,6 +119,7 @@ function App(props) {
           <select 
             onChange={(e) => setNewNoteImportant(e.target.value)}
             value={newNoteImportant}
+            required
           >
             <option>--Select--</option>
             <option value="true">True</option>
