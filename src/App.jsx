@@ -1,134 +1,81 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, { useEffect, useRef, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function App(props) {
 
   // console.log(props.notes);
 
-  // define states
+  // define the state
+  // const [notes, setNotes] = useState([]);
   const [notes, setNotes] = useState(props.notes);
   const [showStatus, setShowStatus] = useState('all');
 
-  // states for adding new notes form
-  const [newNoteContent, setNewNoteContent] = useState('');
-  const [newNoteImportant, setNewNoteImportant] = useState('');
-
-  // const [notes, setNotes] = useState([]);
   // get the data
-  // useEffect(() =>{
+  // useEffect(() => {
   //   setNotes(props.notes);
   // }, []);
-
-  const newNote = useRef(null);
-
-  useEffect(() =>{
-    newNote.current.focus();
-  },[]);
-
- const handleStatusChange = (event) => {
-  setShowStatus(event.target.value);
- }
-
- let filteredNotes = (notes, showStatus) => {
-  switch(showStatus){
-    case 'all':
-      return notes;
-    case 'imp':
-      return notes.filter((note) => note.important === true);
-    case 'nonimp':
-      return notes.filter((note) => note.important === false);
+  
+  const handleStatusChange = (event) => {
+    setShowStatus(event.target.value);
+    // console.log(event.target.value);
   }
 
- }
-
- const notesFiltered = filteredNotes(notes, showStatus);
- const addNewNote = (e) => {
-  e.preventDefault();
-    
-  // create a new noteobject
-  const noteObject = {
-    id: notes.length + 1,
-    content: newNoteContent,
-    important: newNoteImportant === 'true',
+  let filterdNotes = (notes, showStatus) => {
+    switch(showStatus){
+      case 'all':
+        return notes;
+      case 'imp':
+        return notes.filter(note => note.important === true);
+      case 'nonimp':
+        return notes.filter(note => note.important === false);
+    }
   }
 
-  setNotes(notes.concat(noteObject));
-  setNewNoteContent('');
-  setNewNoteImportant('');
+  const notesFiltered = filterdNotes(notes, showStatus);
 
- }
 
   return (
     <div>
       <h1>Notes</h1>
-
       <label>
         <input 
         type="radio"
         name='filter'
+        value='all'
+        onChange={handleStatusChange}
         checked={showStatus === 'all'}
-        onChange={handleStatusChange}
-        value='all' />
-        All Notes
+         /> 
+         All notes
       </label>
-
       <label>
         <input 
         type="radio"
         name='filter'
+        value='imp'
+        onChange={handleStatusChange}
         checked={showStatus === 'imp'}
-        onChange={handleStatusChange}
-        value='imp' />
-        Important Notes
+         />
+          Important notes
       </label>
-
       <label>
         <input 
-        type="radio"
+        type="radio" 
         name='filter'
-        checked={showStatus === 'nonimp'}
+        value='nonimp'
         onChange={handleStatusChange}
-        value='nonimp' />
-        Non-Important Notes
+        checked={showStatus === 'nonimp'}
+        />
+         Non-Important notes
       </label>
-
       <ul>
         {
-          notesFiltered.map((note) => {
-            return <li key={note.id}>{ note.content }</li>
-          })
+          notesFiltered.map(note => 
+            <li key={note.id}>{note.content}</li>)
         }
       </ul>
-      <hr />
-      <h1>Add a New Note : </h1>
-      <form onSubmit={addNewNote}>
-        <label htmlFor="">
-          Content: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="text"
-          placeholder='Add a new note...' 
-          onChange={(e) => setNewNoteContent(e.target.value)}
-          value={newNoteContent}
-          ref={newNote}
-          required/>
-        </label>
-        <br /><br />
-        <label htmlFor="">
-          Is it Important? &nbsp;
-          <select 
-            onChange={(e) => setNewNoteImportant(e.target.value)}
-            value={newNoteImportant}
-            required
-          >
-            <option>--Select--</option>
-            <option value="true">True</option>
-            <option value="false">False</option>
-          </select>
-        </label>
-        <br /><br />
-        <button type='submit'>Add New Note</button>
-      </form>
     </div>
   )
 }
