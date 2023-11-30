@@ -1,16 +1,17 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
+import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-function App(props) {
+function App() {
 
   // console.log(props.notes);
 
   // define the state
   // const [notes, setNotes] = useState([]);
-  const [notes, setNotes] = useState(props.notes);
+  const [notes, setNotes] = useState([]);
   const [showStatus, setShowStatus] = useState('all');
 
   const [newNoteContent, setNewNoteContent] = useState('');
@@ -30,6 +31,16 @@ function App(props) {
 
   useEffect(() => {
     useNewNoteContentRef.current.focus();
+  },[])
+
+
+  //Read --- CRUD in React using axios ---
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/notes')
+      .then(response => {
+        setNotes(response.data)
+      })
   },[])
 
   let filterdNotes = (notes, showStatus) => {
