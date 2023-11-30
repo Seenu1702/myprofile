@@ -33,15 +33,21 @@ function App() {
     useNewNoteContentRef.current.focus();
   },[])
 
+const fetchNotes = async () => {
+ try{
+  const response = await axios.get('http://localhost:3000/notes');
+  setNotes(response.data);
+ }
+ catch(error){
+  console.log("Failed to fetch the note: ",error);
+ }
+  }
 
-  //Read --- CRUD in React using axios ---
+
+
   useEffect(() => {
-    axios
-      .get('http://localhost:3000/notes')
-      .then(response => {
-        setNotes(response.data)
-      })
-  },[])
+    fetchNotes();
+  },[]);
 
   let filterdNotes = (notes, showStatus) => {
     switch(showStatus){
@@ -63,14 +69,22 @@ function App() {
     // console.log(newNoteContent, newNoteImportant);
 
     let newNoteObject = {
-      id: notes.length+1,
       content: newNoteContent,
       important: newNoteImportant === 'true',
     }
 
-    setNotes(notes.concat(newNoteObject));
+    // setNotes(notes.concat(newNoteObject));
+    console.log("adding new note..")
+    axios
+      .post('http://localhost:3000/notes/', newNoteObject)
+      .then(response => {
+        console.log("Added new notes successfully");
+      })
+
     setNewNoteContent('')
     setNewNoteImportant('');
+
+    fetchNotes();
   }
 
 
