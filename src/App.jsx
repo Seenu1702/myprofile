@@ -7,6 +7,8 @@ import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Dashboard from './Components/Dashboard';
 import ReadNote from './Components/ReadNote';
 import CreateNewNotes from './Components/CreateNewNotes';
+import DeleteNote from './Components/DeleteNote';
+import EditNote from './Components/EditNote';
 // import { Link } from 'react-router-dom';
 
 function App() {
@@ -45,14 +47,9 @@ const fetchNotes = async () => {
  }
   }
 
-
-
   useEffect(() => {
     fetchNotes();
   },[]);
-
-
-
 
 
   const addNote = (event) => {
@@ -91,12 +88,16 @@ const fetchNotes = async () => {
           <Link to="/"style={padding}>Dashboard</Link>
           <Link to="/read" style={padding}>Read Notes</Link>
           <Link to="/create" style={padding}>Create Notes</Link>
+          <Link to="/edit" style={padding}>Edit Notes</Link>
+          <Link to="/delete" style={padding}>Delete Notes</Link>
         </div>
 
         <Routes>
           <Route path='/' element={<Dashboard />} />
           <Route path='/read' element={<ReadNote showStatus={ showStatus } handleStatusChange={ handleStatusChange } notes={ notes } />} />
           <Route path='/create' element={<CreateNewNotes addNote={ addNote } setNewNoteContent={ setNewNoteContent } newNoteContent={ newNoteContent} newNoteImportant={newNoteImportant} setNewNoteImportant={ setNewNoteImportant} useNewNoteContentRef={ useNewNoteContentRef} />} />
+          <Route path='/edit' element={<EditNote />} />
+          <Route path='/delete' element={<DeleteNote />} />
         </Routes>
 
       </Router>
