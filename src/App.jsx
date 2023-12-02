@@ -3,6 +3,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
+import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Dashboard from './Components/Dashboard';
+import ReadNote from './Components/ReadNote';
 // import { Link } from 'react-router-dom';
 
 function App() {
@@ -29,9 +32,9 @@ function App() {
 
   const useNewNoteContentRef = useRef(null);
 
-  useEffect(() => {
-    useNewNoteContentRef.current.focus();
-  },[])
+  // useEffect(() => {
+  //   useNewNoteContentRef.current.focus();
+  // },[])
 
 const fetchNotes = async () => {
  try{
@@ -49,18 +52,7 @@ const fetchNotes = async () => {
     fetchNotes();
   },[]);
 
-  let filterdNotes = (notes, showStatus) => {
-    switch(showStatus){
-      case 'all':
-        return notes;
-      case 'imp':
-        return notes.filter(note => note.important === true);
-      case 'nonimp':
-        return notes.filter(note => note.important === false);
-    }
-  }
 
-  const notesFiltered = filterdNotes(notes, showStatus);
 
 
 
@@ -87,76 +79,30 @@ const fetchNotes = async () => {
     fetchNotes();
   }
 
+  const padding = {
+    padding: 15,
+  }
+
 
   return (
     <div>
-      <h1>Notes</h1>
-      <label>
-        <input 
-        type="radio"
-        name='filter'
-        value='all'
-        onChange={handleStatusChange}
-        checked={showStatus === 'all'}
-         /> 
-         All notes
-      </label>
-      <label>
-        <input 
-        type="radio"
-        name='filter'
-        value='imp'
-        onChange={handleStatusChange}
-        checked={showStatus === 'imp'}
-         />
-          Important notes
-      </label>
-      <label>
-        <input 
-        type="radio" 
-        name='filter'
-        value='nonimp'
-        onChange={handleStatusChange}
-        checked={showStatus === 'nonimp'}
-        />
-         Non-Important notes
-      </label>
-      <ul>
-        {
-          notesFiltered.map(note => 
-            <li key={note.id}>{note.content}</li>)
-        }
-      </ul>
-      <hr />
-      <h2>Add a New Note:</h2>
-      <form onSubmit={addNote}>
-        <label>
-          Content: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input 
-            type="text"
-            placeholder='Type a new note...'
-            onChange={(e) => setNewNoteContent(e.target.value)}
-            value={newNoteContent}
-            ref={useNewNoteContentRef}
-            required />
-        </label>
-        <br /><br />
-        <label>
-          Is it important? &nbsp;&nbsp;
-          <select 
-            onChange={(e) => setNewNoteImportant(e.target.value)}
-            value={newNoteImportant}
-            required
-          >
-            <option>--Select--</option>
-            <option value='true'>True</option>
-            <option value='false'>False</option>
-          </select>
-        </label>
-        <br /><br />
-        <button type='submit'>Add a New Note</button>
-      </form>
       
+      <Router>
+
+      
+
+        <div>
+          <Link to="/">Dashboard</Link>
+          <Link to="/read" style={padding}>Read Notes</Link>
+        </div>
+
+        <Routes>
+          <Route path='/' element={<Dashboard />} />
+          <Route path='/read' element={<ReadNote showStatus={ showStatus } handleStatusChange={ handleStatusChange } notes={ notes } />} />
+        </Routes>
+
+        </Router>
+
     </div>
   )
 }
