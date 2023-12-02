@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Dashboard from './Components/Dashboard';
 import ReadNote from './Components/ReadNote';
+import CreateNewNotes from './Components/CreateNewNotes';
 // import { Link } from 'react-router-dom';
 
 function App() {
@@ -32,9 +33,7 @@ function App() {
 
   const useNewNoteContentRef = useRef(null);
 
-  // useEffect(() => {
-  //   useNewNoteContentRef.current.focus();
-  // },[])
+
 
 const fetchNotes = async () => {
  try{
@@ -80,30 +79,27 @@ const fetchNotes = async () => {
   }
 
   const padding = {
-    padding: 15,
+    "paddingRight": 15
   }
 
 
   return (
-    <div>
       
       <Router>
 
-      
-
         <div>
-          <Link to="/">Dashboard</Link>
+          <Link to="/"style={padding}>Dashboard</Link>
           <Link to="/read" style={padding}>Read Notes</Link>
+          <Link to="/create" style={padding}>Create Notes</Link>
         </div>
 
         <Routes>
           <Route path='/' element={<Dashboard />} />
           <Route path='/read' element={<ReadNote showStatus={ showStatus } handleStatusChange={ handleStatusChange } notes={ notes } />} />
+          <Route path='/create' element={<CreateNewNotes addNote={ addNote } setNewNoteContent={ setNewNoteContent } newNoteContent={ newNoteContent} newNoteImportant={newNoteImportant} setNewNoteImportant={ setNewNoteImportant} useNewNoteContentRef={ useNewNoteContentRef} />} />
         </Routes>
 
-        </Router>
-
-    </div>
+      </Router>
   )
 }
 

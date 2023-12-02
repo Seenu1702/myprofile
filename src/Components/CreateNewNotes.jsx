@@ -1,6 +1,13 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/prop-types */
+import React, { useEffect } from 'react';
 
-function CreateNewNotes() {
+function CreateNewNotes({ addNote, setNewNoteContent, setNewNoteImportant, newNoteContent, newNoteImportant, useNewNoteContentRef}) {
+
+    useEffect(() => {
+        useNewNoteContentRef.current.focus();
+      },[])
+
   return (
     <div>
        <h2>Add a New Note:</h2>
