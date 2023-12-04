@@ -97,7 +97,7 @@ const fetchNotes = async () => {
           <Route path='/read' element={<ReadNote showStatus={ showStatus } handleStatusChange={ handleStatusChange } notes={ notes } />} />
           <Route path='/create' element={<CreateNewNotes addNote={ addNote } setNewNoteContent={ setNewNoteContent } newNoteContent={ newNoteContent} newNoteImportant={newNoteImportant} setNewNoteImportant={ setNewNoteImportant} useNewNoteContentRef={ useNewNoteContentRef} />} />
           <Route path='/edit' element={<EditNote notes={notes} setNotes={setNotes} />} />
-          <Route path='/delete' element={<DeleteNote />} />
+          <Route path='/delete' element={<DeleteNote notes={notes} setNotes={setNotes} />} />
         </Routes>
 
       </Router>
