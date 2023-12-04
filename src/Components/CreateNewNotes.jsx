@@ -31,8 +31,8 @@ function CreateNewNotes({ addNote, setNewNoteContent, setNewNoteImportant, newNo
             required
           >
             <option>--Select--</option>
-            <option value='true'>True</option>
-            <option value='false'>False</option>
+            <option>True</option>
+            <option>False</option>
           </select>
         </label>
         <br /><br />
