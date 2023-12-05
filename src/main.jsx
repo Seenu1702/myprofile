@@ -21,8 +21,21 @@ const counterReducer = (state = 0, action) => {
 
 const store = createStore(counterReducer);
 
+
+// subscribe method is called whenever we dispatch an action
+store.subscribe(() => {
+    const stateNow = store.getState();
+    console.log(stateNow);
+})
+
+store.dispatch({type:'INCR'});
+store.dispatch({type:'INCR'});
+store.dispatch({type:'DECR'});
+store.dispatch({type:'INCR'});
+store.dispatch({type:'INCR'});
+
+
+console.log(store.getState());
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <Provider store={store}>
-        <App />
-    </Provider>
-)
+<App />)
