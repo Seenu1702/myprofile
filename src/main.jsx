@@ -8,7 +8,7 @@ import filterReducer from './Reducers/filterReducer.jsx';
 import { Provider } from 'react-redux';
 
 const reducer = combineReducers({
-    note: noteReducer,
+    notes: noteReducer,
     filter: filterReducer,
 })
 const store =createStore(reducer);
