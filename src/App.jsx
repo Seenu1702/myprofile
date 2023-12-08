@@ -7,10 +7,41 @@ import Notes from './Components/Notes';
 import NewNote from './Components/NewNote';
 function App() {
 
+  const filterSelected =(value)=>{
+    console.log(value);
+  }
+
   return (
     <div>
       
       <NewNote />
+      <br />
+      <div>
+        <label>
+          <input 
+            type="radio"
+            name='filter'
+            onClick={() => filterSelected('all')}
+             />
+          All
+        </label>
+        <label>
+          <input 
+            type="radio"
+            name='filter'
+            onClick={() => filterSelected('imp')}
+             />
+          Important
+        </label>
+        <label>
+          <input 
+            type="radio"
+            name='filter'
+            onClick={() => filterSelected('nonimp')}
+             />
+          Non-Important
+        </label>
+      </div>
       <Notes />
     </div>
   )
