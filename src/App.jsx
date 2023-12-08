@@ -46,19 +46,22 @@ store.dispatch({
   }
 })
 
-store.dispatch({
-  type: 'TOGGLE_IMPORTANCE',
-  payload: {
-    id: 2,
-  }
-})
+// store.dispatch({
+//   type: 'TOGGLE_IMPORTANCE',
+//   payload: {
+//     id: 2,
+//   }
+// })
 
-store.dispatch({
-  type: 'TOGGLE_IMPORTANCE',
-  payload: {
-    id: 1,
-  }
-})
+const toggleImportance =(id) => {
+  console.log('button clicked');
+  store.dispatch({
+    type: 'TOGGLE_IMPORTANCE',
+    payload: {
+      id,
+    }
+  })
+}
 
 function App() {
 
@@ -66,7 +69,10 @@ function App() {
     <div>
       {
         store.getState().map(note => 
-            <li key={note.id}>
+            <li 
+              key={note.id}
+              onClick={() => toggleImportance(note.id)}
+              >
               { note.content } {note.important ? '★' : ''}
             </li>
           )
